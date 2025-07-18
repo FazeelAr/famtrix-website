@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 load_dotenv()
-print(os.getenv("DATABASE_URL"))
+## print(os.getenv("DATABASE_URL"))
 from flask import Flask, request, jsonify, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
