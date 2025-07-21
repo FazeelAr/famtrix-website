@@ -52,9 +52,9 @@ def contact():
 
         ## email functionality ##
         sender = 'webfamtrix@gmail.com'
-        reciever = 'webfamtrix@gmail.com'
+        reciever = 'famtrixsolutions@gmail.com'
         subject = f'Client email: {full_name}'
-        text = f"Subject: {subject}\n\n{message}"
+        text = f"Subject: {subject}\n\n{message}\n\nemail: {email} \n\nphone: {phone}"
 
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.starttls()
@@ -62,7 +62,8 @@ def contact():
         server.login(sender, os.getenv('APP_PASSWORD'))
         server.sendmail(sender, reciever, text)
 
-        
+        print("email sent to the admin")
+
 
         return redirect(url_for('contact'))  # Or show success message
     
