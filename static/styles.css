@@ -23,6 +23,7 @@
   /* Must specify these values here as something *different* just so that the transition works properly */
   stroke-dashoffset: 1;
   stroke-dasharray: 0;
+  
 }
 
 .container {

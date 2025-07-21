@@ -1,17 +1,12 @@
 import os
 from dotenv import load_dotenv
 load_dotenv()
-print(os.getenv("DATABASE_URL"))
 from flask import Flask, request, jsonify, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-# from flask_admin import Admin
-# from flask_admin.contrib.sqla import ModelView
+import smtplib
 
-# from flask_admin import AdminIndexView, expose
-# from flask_login import current_user
-
-app = Flask("Company Website")
+app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
@@ -24,30 +19,6 @@ class ContactRequest(db.Model):
     phone = db.Column(db.String)
     message = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
-
-
-## admin panel ###
-
-
-# Initialize admin
-
-# Add your models
-
-
-## login admin panel 
-
-
-# class MyAdminIndexView(AdminIndexView):
-#     @expose('/')
-#     def index(self):
-#         if not current_user.is_authenticated:
-#             return redirect(url_for('login'))  # Your login route
-#         return super().index()
-
-# admin = Admin(app, name='Admin', template_mode='bootstrap4', index_view=MyAdminIndexView())
-# admin.add_view(ModelView(ContactRequest, db.session))
-
-
 
 
 
@@ -78,6 +49,20 @@ def contact():
 
         db.session.add(new_contact)
         db.session.commit()
+
+        ## email functionality ##
+        sender = 'webfamtrix@gmail.com'
+        reciever = 'webfamtrix@gmail.com'
+        subject = f'Client email: {full_name}'
+        text = f"Subject: {subject}\n\n{message}"
+
+        server = smtplib.SMTP("smtp.gmail.com", 587)
+        server.starttls()
+
+        server.login(sender, os.getenv('APP_PASSWORD'))
+        server.sendmail(sender, reciever, text)
+
+        
 
         return redirect(url_for('contact'))  # Or show success message
     
