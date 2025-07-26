@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title%}base{% endblock %}</title>
-    <link rel="stylesheet" href="../static/styles.css" />
-    <link rel="icon" type="image/jpg" href="../assests/famtrix_logo.jpg" />
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}" />
+    <link rel="icon" type="image/jpg" href="{{url_for('static', filename='famtrix_logo.jpeg')}}" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Open+Sans&display=swap"
       rel="stylesheet"
@@ -15,10 +15,10 @@
   <body style="background-color: #000; color: white">
     <nav class="nav">
       <div class="container">
-        <a href="/" class="btn">Home</a>
-        <a href="/contact" class="btn">Contact</a>
-        <a href="/about" class="btn">About</a>
-        <a href="/services" class="btn">Services</a>
+        <a href="{{ url_for('index') }}" class="btn">Home</a>
+        <a href="{{ url_for('contact') }}" class="btn">Contact</a>
+        <a href="{{ url_for('about') }}" class="btn">About</a>
+        <a href="{{ url_for('services') }}" class="btn">Services</a>
         <svg
           class="outline"
           overflow="visible"

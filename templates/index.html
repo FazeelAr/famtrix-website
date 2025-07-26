@@ -1,14 +1,5 @@
 {% extends "base.html" %} {% block title %}Famtrix Solutions{% endblock %} {%
 block content %}
-<header>
-  <img
-    src="{{ url_for('static', filename='assets/famtrix_logo.svg') }}"
-    alt="Famtrix Solutions Logo"
-    class="logo"
-  />
-  <h1>Empowering Innovation with Famtrix Solutions</h1>
-  <button class="cta-button">Get Started</button>
-</header>
 
 <style>
   body {
@@ -65,6 +56,19 @@ block content %}
     color: #94a3b8;
   }
 </style>
+
+
+<header>
+  <img
+    src="{{ url_for('static', filename='famtrix_logo.jpeg') }}"
+    alt="Famtrix Solutions Logo"
+    class="logo"
+  />
+  <h1>Empowering Innovation with Famtrix Solutions</h1>
+  <button class="cta-button">Get Started</button>
+</header>
+
+
 <section>
   <h2>About Us</h2>
   <p>
