@@ -1,6 +1,108 @@
 {% extends "base.html" %} {% block title %}Famtrix Solutions{% endblock %} {%
 block content %}
+<header>
+  <img
+    src="{{ url_for('static', filename='assets/famtrix_logo.svg') }}"
+    alt="Famtrix Solutions Logo"
+    class="logo"
+  />
+  <h1>Empowering Innovation with Famtrix Solutions</h1>
+  <button class="cta-button">Get Started</button>
+</header>
 
-<h1>home page</h1>
+<style>
+  body {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    background-color: #0d1117;
+    color: #cbd5e1;
+  }
+  header {
+    background-color: #0d1117;
+    padding: 2rem;
+    text-align: center;
+  }
+  .logo {
+    max-width: 150px;
+    margin: 0 auto 1rem;
+  }
+  h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: #f9fafb;
+  }
+  .cta-button {
+    background: #bef6;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  section {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  .services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .service-box {
+    background-color: #1f2937;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 280px;
+  }
+  footer {
+    background-color: #1f2937;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #94a3b8;
+  }
+</style>
+<section>
+  <h2>About Us</h2>
+  <p>
+    We are a tech-driven agency providing smart, scalable solutions for modern
+    businesses. From digital transformation to full-stack development, we
+    innovate with integrity.
+  </p>
+</section>
+
+<section>
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="service-box">
+      <h3>Web Development</h3>
+      <p>
+        Modern, responsive, and high-performance websites tailored to your
+        needs.
+      </p>
+    </div>
+    <div class="service-box">
+      <h3>Software Solutions</h3>
+      <p>Custom-built software that solves real-world problems efficiently.</p>
+    </div>
+    <div class="service-box">
+      <h3>Cloud & DevOps</h3>
+      <p>
+        Seamless cloud integrations and scalable infrastructure deployments.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Let's Talk</h2>
+  <p>Ready to start your project? We're here to help you grow.</p>
+  <a href="/contact" target="_blank"
+    ><button class="cta-button">Contact Us</button></a
+  >
+</section>
 
 {% endblock %}

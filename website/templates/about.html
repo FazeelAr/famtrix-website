@@ -1,9 +1,59 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block title %}About{% endblock %} {% block content
+%}
 
-{% block title %}About{% endblock %}
+<style>
+  body {
+    font-family: "Inter", sans-serif;
+    background-color: #0d1117;
+    color: #f1f5f9;
+    margin: 0;
+  }
 
-{% block content %}
+  .about-section {
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
 
-<h1>About page</h1>
+  .about-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.8;
+    background-color: #1f2937;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+</style>
+
+<section class="about-section">
+  <h1 class="about-title">Meet the Team Behind Famtrix Solutions</h1>
+  <div class="about-text">
+    <p>
+      At Famtrix Solutions, we are a dedicated team of 10 certified software
+      engineers, each with a strong foundation in modern development
+      technologies and a passion for innovation. Our diverse expertise spans web
+      development, automation, and full-stack software engineering.
+    </p>
+    <p>
+      What sets us apart is our commitment to quality, efficiency, and client
+      satisfaction. Whether you're a startup or an established brand, we
+      collaborate closely to bring your digital vision to life — on time, on
+      budget, and with precision.
+    </p>
+    <p>
+      Backed by industry-recognized certifications and real-world experience,
+      our team is ready to deliver solutions that are not only technically sound
+      but also tailored to your business goals.
+    </p>
+  </div>
+</section>
 
 {% endblock %}
