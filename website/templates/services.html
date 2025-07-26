@@ -1,0 +1,93 @@
+{% extends "base.html" %} {% block title %}Services{% endblock %} {% block
+content %}
+
+<style>
+  body {
+    font-family: "Inter", sans-serif;
+  }
+
+  .services-section {
+    padding: 4rem 2rem;
+    background-color: #0d1117;
+    color: #f1f5f9;
+    text-align: center;
+  }
+
+  .services-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+
+  .services-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .service-box {
+    background-color: #1f2937;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: left;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .service-box h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #3b82f6;
+  }
+
+  .service-box p {
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+
+  @media (min-width: 768px) {
+    .services-columns {
+      flex-direction: row;
+    }
+  }
+</style>
+<section class="services-section">
+  <h1 class="services-title">
+    Elevate Your Digital Presence with Our Web Services
+  </h1>
+  <div class="services-columns">
+    <div class="service-box">
+      <h3>Wix Website Design for Every Business</h3>
+      <p>
+        Launch fast with beautifully designed Wix websites tailored to your
+        niche — be it e-commerce, personal brands, or service-based businesses.
+        Fully responsive, SEO-ready, and hassle-free.
+      </p>
+    </div>
+    <div class="service-box">
+      <h3>Smart Website Automation Solutions</h3>
+      <p>
+        Streamline your operations with smart automations. We integrate CRMs,
+        APIs, and third-party tools that save time and boost efficiency across
+        your website.
+      </p>
+    </div>
+    <div class="service-box">
+      <h3>Custom Website Development</h3>
+      <p>
+        Get a fully custom-built website using modern technologies like HTML,
+        CSS, Flask, and React. Scalable, secure, and made to match your exact
+        business needs and branding.
+      </p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
